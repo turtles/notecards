@@ -1,37 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 import {
   Label, Input, Row, Col, Button
 } from 'reactstrap';
 
-class NotecardList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    };
-    this.changedInputWord = this.changedInputWord.bind(this);
-    this.changedInputDefinition = this.changedInputDefinition.bind(this);
-  }
-  changedInputWord(event) {
-  }
-  changedInputDefinition(event) {
-  }
-  render() {
-    return (
+const NotecardListItem = (key, onUpdateNotecard, notecard) => (
       <Row>
           <Col>
               <Input id="word"
-                value={this.state.word}
-                onChange={this.changedInputWord} />
+                value={notecard.word}
+                onChange={()=>onUpdateNotecard(key, notecard)} />
           </Col>
           <Col>
               <Input id="definition"
-                value={this.state.definition}
-                onChange={this.changedInputDefinition} />
+                value={notecard.definition}
+                onChange={()=>onUpdateNotecard(key, notecard)} />
           </Col>
       </Row>
-    );
-  }
+  );
+
+NotecardListItem.propTypes = {
+  key: PropTypes.number.isRequired,
+  onUpdateNotecard: PropTypes.func.isRequired,
+  notecard: PropTypes.object.isRequired
 }
 
-export default NotecardList;
+export default NotecardListItem;

@@ -1,64 +1,39 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import NotecardListItem from './NotecardListItem.js';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
   Container,
   Row,
   Col,
-  Jumbotron,
   Button
 } from 'reactstrap';
 
-class NotecardList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current:2,
-      cards: [
-        {
-          key:1,
-          word: "word",
-          defintiion: "definition"
-        }
-      ]
-    };
 
-    // Bind some functions
-    this.addCard = this.addCard.bind(this);
-    this.removeCard = this.removeCard.bind(this);
-    this.updateCard = this.updateCard.bind(this);
-  }
-  addCard() {
-  }
-  removeCard(key) {
-  }
-  updateCard(key, word, def) {
-  }
-  render() {
-    const notecards = this.state.cards.map((card)=>
-        (
-          <Row>
-            <Col><NotecardListItem key={card.key} word={card.word} definition={card.definition} updateCard={this.updateCard}/></Col>
-            <Col>
-              <Button color="danger" onClick={()=>this.removeCard(card.key)}>Delete</Button>
-            </Col>
-          </Row>
-        )
-      );
+const NotecardList = ({notecards, onAddNotecard, onRemoveNotecard, onUpdateNotecard}) => (
+  <div>
+    {notecards.map((notecard, index) => (
+      <Row>
+      <NotecardListItem key={index}
+        onUpdateNotecard={onUpdateNotecard}
+        notecard={notecard} />
+      <Button onClick={()=>onRemoveNotecard(index)}>x</Button>
+      </Row>
+    ))}
 
-    return (
-      <div>
-        {notecards}
-        <Button color="primary" onClick={this.addCard}>+</Button>
-      </div>
-    );
-  }
+    <Button onClick={onAddNotecard}>+</Button>
+  </div>
+)
+
+NotecardList.propTypes = {
+  notecards: PropTypes.arrayOf(
+    PropTypes.shape({
+      word: PropTypes.string.isRequired,
+      definition: PropTypes.string.isRequired
+    })
+  ),
+  onAddNotecard: PropTypes.func.isRequired,
+  onRemoveNotecard: PropTypes.func.isRequired,
+  onUpdateNotecard: PropTypes.func.isRequired
 }
 
 export default NotecardList;

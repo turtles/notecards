@@ -1,28 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {
-  Label, Input, Row, Col, Button
+  Input, Row, Col
 } from 'reactstrap';
 
-const NotecardListItem = (key, onUpdateNotecard, notecard) => (
-      <Row>
-          <Col>
-              <Input id="word"
-                value={notecard.word}
-                onChange={()=>onUpdateNotecard(key, notecard)} />
-          </Col>
-          <Col>
-              <Input id="definition"
-                value={notecard.definition}
-                onChange={()=>onUpdateNotecard(key, notecard)} />
-          </Col>
-      </Row>
+const NotecardListItem = (key, word, definition, onUpdateNotecard) => (
+    <Row>
+        <Col>
+            <Input id="word"
+              type="text"
+              value={word}
+              onChange={(e)=>onUpdateNotecard(e)} />
+        </Col>
+        <Col>
+            <Input id="definition"
+              type="text"
+              value={definition}
+              onChange={(e)=>onUpdateNotecard(e)} />
+        </Col>
+    </Row>
   );
 
 NotecardListItem.propTypes = {
   key: PropTypes.number.isRequired,
+  word: PropTypes.string.isRequired,
+  definition: PropTypes.string.isRequired,
   onUpdateNotecard: PropTypes.func.isRequired,
-  notecard: PropTypes.object.isRequired
 }
 
 export default NotecardListItem;

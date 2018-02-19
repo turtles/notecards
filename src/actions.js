@@ -14,10 +14,10 @@ export function addNotecard() {
   return { type: ADD_NOTECARD }
 }
 
-export function removeNotecard(index) {
-  return { type: REMOVE_NOTECARD, index }
+export function removeNotecard(id) {
+  return { type: REMOVE_NOTECARD, id }
 }
 
-export function updateNotecard(index, notecard) {
-  return { type: UPDATE_NOTECARD, index, notecard }
+export function updateNotecard(id, word, definition) {
+  return { type: UPDATE_NOTECARD, id, word, definition }
 }

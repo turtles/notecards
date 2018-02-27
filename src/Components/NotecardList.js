@@ -27,15 +27,17 @@ const NotecardList = ({notecards, onAddNotecard, onRemoveNotecard, onUpdateNotec
     <br/>
     {notecards.map((notecard, index) => (
         <Row key={notecard.id}>
-          <Col>
+          <Col xs="3">
             <Input value={notecard.word}
                 onChange={(e)=>onUpdateNotecard(notecard.id, e.target.value, notecard.definition)} />
           </Col>
-          <Col>
-            <Input value={notecard.definition}
+          <Col xs="8">
+            <Input value={notecard.definition} type="textarea" 
                 onChange={(e)=>onUpdateNotecard(notecard.id, notecard.word, e.target.value)} />
           </Col>
-          <Button onClick={()=>onRemoveNotecard(notecard.id)}>x</Button>
+          <Col xs="1">
+            <Button onClick={()=>onRemoveNotecard(notecard.id)}>x</Button>
+          </Col>
         </Row>
       ))}
     <br/>

@@ -6,13 +6,13 @@ import {
 
 const NotecardListItem = (key, word, definition, onUpdateNotecard) => (
     <Row>
-        <Col>
+        <Col xs="3">
             <Input id="word"
               type="text"
               value={word}
               onChange={(e)=>onUpdateNotecard(e)} />
         </Col>
-        <Col>
+        <Col xs="auto">
             <Input id="definition"
               type="text"
               value={definition}

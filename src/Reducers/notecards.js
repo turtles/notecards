@@ -11,34 +11,39 @@ const initialState =
 		definition:"definition"
 	}];
 
+const getCardById = (cardArray, id) => {
+	return cardArray.find((card)=> (card.id === id));
+};
+
+const getCardIndex = (cardArray, id) => {
+	return cardArray.findIndex((card)=> (card.id === id));
+}
+
 const notecards = (state = initialState, action) => {
+	let card, updatedCards;
 	switch (action.type) {
 		case ADD_NOTECARD:
 			// get next id by finding the max id in state and adding 1
 			let nextId = 0;
-			for (var i = 0; i < state.length; ++i) {
-				if (nextId < state[i].id) nextId = state[i].id;
-			}
-			nextId++;
+			state.forEach(card=>{if (card.id >= nextId) nextId = card.id+1; });
 			// merge state
 			return [
 				...state,
 				{
-					id: nextId,
-					word:"",
-					definition:""
+					id: nextId, word:"", definition:""
 				}
 			];
+
 		case REMOVE_NOTECARD:
-		// TODO: lookup by id
-			let deletedCards = state.slice();
-			deletedCards.splice(action.id-1, 1);
-			return deletedCards;
+			updatedCards = state.slice();
+			updatedCards.splice(getCardIndex(updatedCards, action.id), 1);
+			return updatedCards;
+
 		case UPDATE_NOTECARD:
-			let updatedCards = state.slice();
-			// TODO: lookup by id
-			updatedCards[action.id-1].word = action.word;
-			updatedCards[action.id-1].definition = action.definition;
+			updatedCards = state.slice();
+			card = getCardById(updatedCards, action.id);
+			card.word = action.word;
+			card.definition = action.definition;
 			return updatedCards;
 
 		default:

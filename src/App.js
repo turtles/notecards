@@ -1,10 +1,10 @@
 import React from 'react';
 import NotecardEditor from './Components/NotecardEditor.js';
-
+import {Container} from 'reactstrap'
 const App = () => (
-  <div>
+  <Container>
     <NotecardEditor/>
-  </div>
+  </Container>
 )
 
 export default App;

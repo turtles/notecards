@@ -5,6 +5,8 @@
 export const ADD_NOTECARD = 'ADD_NOTECARD'
 export const REMOVE_NOTECARD = 'REMOVE_NOTECARD'
 export const UPDATE_NOTECARD = 'UPDATE_NOTECARD'
+export const IMPORT_NOTECARDS = 'IMPORT_NOTECARDS';
+export const EXPORT_NOTECARDS = 'EXPORT_NOTECARDS';
 
 /*
  * action creators
@@ -20,4 +22,11 @@ export function removeNotecard(id) {
 
 export function updateNotecard(id, word, definition) {
   return { type: UPDATE_NOTECARD, id, word, definition }
+}
+
+export function importNotecards() {
+  return { type: IMPORT_NOTECARDS }
+}
+export function exportNotecards() {
+  return { type: EXPORT_NOTECARDS }
 }

@@ -1,12 +1,10 @@
 import { connect } from 'react-redux'
-import {addNotecard, removeNotecard, updateNotecard} from '../actions'
+import {addNotecard, removeNotecard, updateNotecard,
+				importNotecards, exportNotecards} from '../actions'
 import NotecardList from './NotecardList'
 
 const mapStateToProps = state => {
-	console.log(state.notecards);
-	return {
-		notecards: state.notecards
-	};
+	return { notecards: state.notecards };
 }
 
 const mapDispatchToProps = dispatch => {
@@ -19,7 +17,13 @@ const mapDispatchToProps = dispatch => {
 		},
 		onUpdateNotecard: (id, word, definition) => {
 			dispatch(updateNotecard(id, word, definition));
-		}
+		},
+		onImportNotecards: ()=>{
+			dispatch(importNotecards());
+		},
+		onExportNotecards: ()=>{
+			dispatch(exportNotecards());
+		},
 	}
 }
 

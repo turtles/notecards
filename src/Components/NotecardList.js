@@ -8,15 +8,17 @@ import {
 
 // TODO: Use NotecardListItem (had some trouble mapping properties)
 
-const NotecardList = ({notecards, onAddNotecard, onRemoveNotecard, onUpdateNotecard}) => (
+const NotecardList = ({notecards,
+                        onAddNotecard, onRemoveNotecard, onUpdateNotecard,
+                        onImportNotecards, onExportNotecards}) => (
   <div>
     <h2>Edit Notecards</h2>
     <Nav>
       <NavItem>
-        <NavLink href="#">Import</NavLink>
+        <NavLink href="#" onClick={onImportNotecards}>Import</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink href="#">Export</NavLink>
+        <NavLink href="#" onClick={onExportNotecards}>Export</NavLink>
       </NavItem>
     </Nav>
     <Row>
@@ -32,7 +34,7 @@ const NotecardList = ({notecards, onAddNotecard, onRemoveNotecard, onUpdateNotec
                 onChange={(e)=>onUpdateNotecard(notecard.id, e.target.value, notecard.definition)} />
           </Col>
           <Col xs="8">
-            <Input value={notecard.definition} type="textarea" 
+            <Input value={notecard.definition} type="textarea"
                 onChange={(e)=>onUpdateNotecard(notecard.id, notecard.word, e.target.value)} />
           </Col>
           <Col xs="1">

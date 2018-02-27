@@ -1,8 +1,8 @@
 import {
-	ADD_NOTECARD,
-	REMOVE_NOTECARD,
-	UPDATE_NOTECARD
+	ADD_NOTECARD, REMOVE_NOTECARD, UPDATE_NOTECARD,
+	IMPORT_NOTECARDS, EXPORT_NOTECARDS
 } from '../actions'
+import {saveAs} from 'file-saver'
 
 const initialState =
 	[{
@@ -45,6 +45,14 @@ const notecards = (state = initialState, action) => {
 			card.word = action.word;
 			card.definition = action.definition;
 			return updatedCards;
+
+		case IMPORT_NOTECARDS:
+			console.log('import');
+			return state;
+
+		case EXPORT_NOTECARDS:
+			console.log('export');
+			return state;
 
 		default:
 			return state;

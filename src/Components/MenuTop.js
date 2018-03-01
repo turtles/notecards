@@ -5,30 +5,26 @@ import {
 } from 'reactstrap';
 
 const MenuTop = ({view, onGotoQuiz, onGotoNotecardEditor}) => {
-  console.log("the view is " + view);
+  let title, menu;
   if (view === 'quiz') {
-    return (
-    <div>
-      <h2>Quiz</h2>
-      <Row>
-        <Col sm={{size: 2, offset: 5}}>
-          <Button onClick={onGotoNotecardEditor}>Edit Notecards</Button>
-        </Col>
-      </Row>
-      <br/>
-    </div>);
+    title = 'Quiz';
+    menu = <Button onClick={onGotoNotecardEditor}>Edit Notecards</Button>;
   }
   else {
-    return (<div>
-      <h2>Edit Notecards</h2>
+    title = 'Edit Notecards';
+    menu = <Button onClick={onGotoQuiz}>Start Quiz</Button>;
+  }
+
+  return (
+    <div>
+      <h2>{title}</h2>
       <Row>
         <Col sm={{size: 2, offset: 5}}>
-          <Button onClick={onGotoQuiz}>Start Quiz</Button>
+          {menu}
         </Col>
       </Row>
       <br/>
     </div>);
-  }
 };
 
 export default MenuTop;

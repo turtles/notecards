@@ -10,13 +10,13 @@ const menu = (state = {}, action) => {
 			return {...state, view: 'notecardEditor'};
 
 		case GOTO_QUIZ:
+
 			console.log('alternative meow');
 			if (state.view === 'quiz') {
 					return {...state, view: 'notecardEditor'};
 			} else {
 					return {...state, view: 'quiz'};
 			}
-
 
 		default:
 			console.log('default?!?!?!');

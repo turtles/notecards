@@ -1,0 +1,14 @@
+.Notecard {
+  width:100%;
+  margin:auto;
+  max-width: 600px;
+  min-width:256px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  height:320px;
+}
+
+.NotecardText {
+  font-size:2em;
+}

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import notecards from './notecards'
+import menu from './menu'
+import quiz from './quiz'
 
 const notecardsAppReducers = combineReducers({
-	notecards
-})
+	notecards, menu, quiz
+});
 
 export default notecardsAppReducers;

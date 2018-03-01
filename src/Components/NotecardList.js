@@ -10,9 +10,9 @@ import {
 
 const NotecardList = ({notecards,
                         onAddNotecard, onRemoveNotecard, onUpdateNotecard,
-                        onImportNotecards, onExportNotecards}) => (
+                        onImportNotecards, onExportNotecards,
+                        onStartQuiz}) => (
   <div>
-    <h2>Edit Notecards</h2>
     <Nav>
       <NavItem>
         <NavLink href="#" onClick={onImportNotecards}>Import</NavLink>
@@ -21,12 +21,6 @@ const NotecardList = ({notecards,
         <NavLink href="#" onClick={onExportNotecards}>Export</NavLink>
       </NavItem>
     </Nav>
-    <Row>
-      <Col sm={{size: 2, offset: 5}}>
-        <Button>Start Quiz</Button>
-      </Col>
-    </Row>
-    <br/>
     {notecards.map((notecard, index) => (
         <Row key={notecard.id}>
           <Col xs="3">

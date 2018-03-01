@@ -3,7 +3,7 @@ import { gotoQuiz, gotoNotecardEditor } from '../Actions/menu'
 import MenuTop from './MenuTop'
 
 const mapStateToProps = state => {
-	return { view: state.view };
+	return { view: state.menu.view };
 }
 
 const mapDispatchToProps = dispatch => {

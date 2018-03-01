@@ -46,7 +46,7 @@ const NotecardList = ({notecards,
 )
 
 NotecardList.propTypes = {
-  notecards: PropTypes.object.isRequired,
+  notecards: PropTypes.array.isRequired,
   onAddNotecard: PropTypes.func.isRequired,
   onRemoveNotecard: PropTypes.func.isRequired,
   onUpdateNotecard: PropTypes.func.isRequired

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import {gotoNotecardEditor} from '../Actions/quiz'
-import QuizMode from './QuizMode'
+import NotecardViewer from './NotecardViewer'
 
 const mapStateToProps = state => {
 	// return { notecards: state.notecards };
@@ -15,8 +15,8 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-const QuizMode = connect(
+const Quiz = connect(
 	mapStateToProps, mapDispatchToProps
 )(NotecardViewer);
 
-export default QuizMode;
+export default Quiz;

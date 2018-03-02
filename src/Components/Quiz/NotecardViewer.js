@@ -1,10 +1,6 @@
 import '../../Styles/QuizView.css';
 import React from 'react';
 import PropTypes from 'prop-types'
-import {
-  Row,Col,
-  Nav, NavItem, NavLink
-} from 'reactstrap';
 import { CSSTransition } from 'react-transition-group'
 import NotecardViewerMenu from './NotecardViewerMenu'
 

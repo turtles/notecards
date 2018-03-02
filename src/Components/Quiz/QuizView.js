@@ -2,8 +2,7 @@ import '../../Styles/QuizView.css';
 import React from 'react';
 import PropTypes from 'prop-types'
 import {
-  Row,Col,
-  Button,
+  Row, Col,
   Nav, NavItem, NavLink
 } from 'reactstrap';
 import CardCounter from './CardCounter'

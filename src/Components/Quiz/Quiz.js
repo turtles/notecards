@@ -18,7 +18,9 @@ const mapStateToProps = state => {
 			flipped: state.quiz.flipped,
 			word: card.word,
 			definition: card.definition,
-			definitionFirst: state.quiz.definitionFirst
+			definitionFirst: state.quiz.definitionFirst,
+			cardIndex: state.quiz.cardIndex,
+			totalCards: state.notecards.length
 		};
 }
 

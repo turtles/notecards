@@ -23,7 +23,9 @@ const Swap = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onNextCard, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
+const NotecardViewer = ({
+    flipped, word, definition, definitionFirst, cardIndex, totalCards,
+    onFlip, onNextCard, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
   // TODO: Break into subcomponents
   let cardMenu = (!flipped ? (
       <Row>
@@ -56,9 +58,19 @@ const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onN
 
   return (
     <div>
-      <Nav>
-        {navItemDefinitionFirst}
-      </Nav>
+      <Row>
+        <Col>
+        <Nav>
+          {navItemDefinitionFirst}
+          <NavItem>
+            <NavLink disabled href="#"></NavLink>
+          </NavItem>
+        </Nav>
+        </Col>
+        <Col className="text-right">
+          {cardIndex+1}/{totalCards}
+        </Col>
+      </Row>
       <CardTransitions in={!!flipped}>
         <table className="Notecard">
           <tbody>

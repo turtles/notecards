@@ -7,6 +7,7 @@ export const PREVIOUS_CARD = 'PREVIOUS_CARD';
 export const CORRECT = 'CORRECT';
 export const INCORRECT = 'INCORRECT';
 export const DEFINITION_FIRST_CHANGED = 'DEFINITION_FIRST_CHANGED';
+export const RESTART_QUIZ = 'RESTART_QUIZ';
 /*
  * action creators
  */
@@ -32,4 +33,8 @@ export function incorrect() {
 
 export function definitionFirstChanged() {
  return { type: DEFINITION_FIRST_CHANGED }
-}
+};
+
+export function restartQuiz() {
+  return { type: RESTART_QUIZ }
+};

@@ -1,5 +1,6 @@
 import {
-	FLIP, NEXT_CARD, PREVIOUS_CARD, CORRECT, INCORRECT, DEFINITION_FIRST_CHANGED
+	FLIP, NEXT_CARD, PREVIOUS_CARD, CORRECT, INCORRECT, DEFINITION_FIRST_CHANGED,
+	RESTART_QUIZ
 } from '../Actions/quiz'
 import {GOTO_QUIZ} from '../Actions/menu'
 
@@ -20,6 +21,7 @@ const quiz = (state = initialState, action) => {
 			};
 
 		case GOTO_QUIZ:
+		case RESTART_QUIZ:
 			// New game logic here
 			return {...state, cardIndex: 0, flipped: false};
 

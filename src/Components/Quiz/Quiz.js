@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 import {
 	flip, nextCard,
 	correct, incorrect,
-	definitionFirstChanged
+	definitionFirstChanged,
+	restartQuiz
 } from '../../Actions/quiz'
 import QuizView from './QuizView'
 
@@ -32,6 +33,7 @@ const mapDispatchToProps = dispatch => {
 		onCorrect: ()=>dispatch(correct()),
 		onIncorrect: ()=>dispatch(incorrect()),
 		onDefinitionFirstChanged: ()=>dispatch(definitionFirstChanged()),
+		onRestartQuiz: ()=>dispatch(restartQuiz())
 	}
 }
 

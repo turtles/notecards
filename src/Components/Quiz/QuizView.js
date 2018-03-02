@@ -13,7 +13,7 @@ const QuizView = ({
     // State
     flipped, word, definition, definitionFirst, cardIndex, totalCards,
     // Dispatch
-    onFlip, onSkip, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
+    onFlip, onSkip, onCorrect, onIncorrect, onDefinitionFirstChanged, onRestartQuiz}) => {
 
   let navItemDefinitionFirst = (definitionFirst ?
     (<NavItem><NavLink href="#" onClick={onDefinitionFirstChanged}>Definition</NavLink></NavItem>) :
@@ -25,7 +25,7 @@ const QuizView = ({
   let quizObjects;
   if (quizComplete) {
     quizObjects = (
-      <QuizComplete/>
+      <QuizComplete onRestartQuiz={onRestartQuiz}/>
     );
   }
   else {

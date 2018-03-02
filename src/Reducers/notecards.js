@@ -2,6 +2,7 @@ import {
 	ADD_NOTECARD, REMOVE_NOTECARD, UPDATE_NOTECARD,
 	IMPORT_NOTECARDS, EXPORT_NOTECARDS
 } from '../Actions/notecardEditor'
+import {GOTO_QUIZ} from '../Actions/menu'
 import {saveAs} from 'file-saver'
 
 const initialState =
@@ -17,6 +18,10 @@ const getCardById = (cardArray, id) => {
 
 const getCardIndex = (cardArray, id) => {
 	return cardArray.findIndex((card)=> (card.id === id));
+};
+
+const removeBlankCards = (cardArray) => {
+	return cardArray.filter(card=> card.word.trim()!=="" || card.definition.trim()!=="");
 };
 
 const notecards = (state = initialState, action) => {
@@ -45,6 +50,7 @@ const notecards = (state = initialState, action) => {
 			card.word = action.word;
 			card.definition = action.definition;
 			return updatedCards;
+
 		case IMPORT_NOTECARDS:
 			console.log('import');
 			return state;
@@ -52,6 +58,9 @@ const notecards = (state = initialState, action) => {
 		case EXPORT_NOTECARDS:
 			console.log('export');
 			return state;
+
+		case GOTO_QUIZ:
+			return removeBlankCards(state);
 
 		default:
 			return state;

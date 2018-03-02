@@ -3,7 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {
   Row,Col,
-  Button
+  Button,
+  Nav, NavItem, NavLink
 } from 'reactstrap';
 import { CSSTransition } from 'react-transition-group'
 
@@ -22,7 +23,7 @@ const Swap = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onNextCard, onPreviousCard, onCorrect, onIncorrect}) => {
+const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onNextCard, onPreviousCard, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
   let cardMenu = (!flipped ? (
       <Row>
         <Col sm={{size: 2, offset: 2}}>
@@ -42,8 +43,16 @@ const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onN
       </Row>
     ));
 
+  let navItemDefinitionFirst = (definitionFirst ?
+    (<NavItem><NavLink href="#" onClick={onDefinitionFirstChanged}>Definition</NavLink></NavItem>) :
+    (<NavItem><NavLink href="#" onClick={onDefinitionFirstChanged}>Word</NavLink></NavItem>)
+  );
+
   return (
     <div>
+      <Nav>
+        {navItemDefinitionFirst}
+      </Nav>
       <Fade in={!!flipped}>
         <table className="Notecard">
           <tbody>

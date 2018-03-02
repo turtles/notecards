@@ -3,15 +3,11 @@ import {
 	gotoQuiz,
 	gotoNotecardEditor
 } from '../Actions/menu'
-import { definitionFirstChanged } from '../Actions/quiz'
 import MenuTop from './MenuTop'
 
 const mapStateToProps = state => {
-	console.log('state.quiz.definitionFirst');
-	console.log(state.quiz.definitionFirst);
 	return {
-		view: state.menu.view,
-		definitionFirst: state.quiz.definitionFirst
+		view: state.menu.view
 	};
 }
 
@@ -22,10 +18,7 @@ const mapDispatchToProps = dispatch => {
 		},
 		onGotoNotecardEditor: ()=>{
 			dispatch(gotoNotecardEditor());
-		},
-		onDefinitionFirstChanged: ()=>{
-			dispatch(definitionFirstChanged());
-		},
+		}
 	}
 }
 

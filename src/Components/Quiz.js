@@ -1,5 +1,9 @@
 import { connect } from 'react-redux'
-import {flip, nextCard, previousCard, correct, incorrect} from '../Actions/quiz'
+import {
+	flip, nextCard, previousCard,
+	correct, incorrect,
+	definitionFirstChanged
+} from '../Actions/quiz'
 import NotecardViewer from './NotecardViewer'
 
 const mapStateToProps = state => {
@@ -24,7 +28,8 @@ const mapDispatchToProps = dispatch => {
 		onNextCard:()=>dispatch(nextCard()),
 		onPreviousCard:()=>dispatch(previousCard()),
 		onCorrect: ()=>dispatch(correct()),
-		onIncorrect: ()=>dispatch(incorrect())
+		onIncorrect: ()=>dispatch(incorrect()),
+		onDefinitionFirstChanged: ()=>dispatch(definitionFirstChanged()),
 	}
 }
 

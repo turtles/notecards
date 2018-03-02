@@ -42,9 +42,6 @@ const NotecardViewer = ({
         <Col>
         <Nav>
           {navItemDefinitionFirst}
-          <NavItem>
-            <NavLink disabled href="#"></NavLink>
-          </NavItem>
         </Nav>
         </Col>
         <Col className="text-right">

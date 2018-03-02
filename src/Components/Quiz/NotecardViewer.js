@@ -47,4 +47,15 @@ const NotecardViewer = ({
   </div>
 );
 
+NotecardViewer.propTypes = {
+  flipped: PropTypes.bool.isRequired,
+  word: PropTypes.string.isRequired,
+  definition: PropTypes.string.isRequired,
+  definitionFirst: PropTypes.bool.isRequired,
+  onFlip: PropTypes.func.isRequired,
+  onSkip: PropTypes.func.isRequired,
+  onCorrect: PropTypes.func.isRequired,
+  onIncorrect: PropTypes.func.isRequired,
+}
+
 export default NotecardViewer;

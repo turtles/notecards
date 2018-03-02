@@ -6,7 +6,7 @@ import {
   Nav, NavItem, NavLink
 } from 'reactstrap';
 
-// TODO: Use NotecardListItem (had some trouble mapping properties)
+// TODO: Break into subcomponents
 
 const NotecardList = ({notecards,
                         onAddNotecard, onRemoveNotecard, onUpdateNotecard,

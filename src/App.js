@@ -8,7 +8,7 @@ import {Container} from 'reactstrap'
 
 const AppContainer = ({view}) => {
   let body;
-  if (view == 'quiz') {
+  if (view === 'quiz') {
     body = <Quiz/>;
   } else {
     body = <NotecardEditor/>;

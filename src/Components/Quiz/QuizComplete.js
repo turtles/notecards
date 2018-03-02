@@ -1,12 +1,10 @@
 import '../../Styles/QuizView.css';
 import React from 'react';
-import PropTypes from 'prop-types'
 import {
-  Row,Col,
-  Nav, NavItem, NavLink
+  Row, Col
 } from 'reactstrap';
 
-const QuizComplete = ({})=>{
+const QuizComplete = ()=>{
   return (
     <Row>
       <Col sm={{size: 6, offset: 3}} className="align-center">

@@ -13,4 +13,9 @@ const CardCounter = ({currentCard, totalCards})=>{
   }
 }
 
+CardCounter.propTypes = {
+  currentCard: PropTypes.number.isRequired,
+  totalCards: PropTypes.number.isRequired,
+}
+
 export default CardCounter;

@@ -53,4 +53,18 @@ const QuizView = ({
   );
 }
 
+QuizView.propTypes = {
+  flipped: PropTypes.bool.isRequired,
+  word: PropTypes.string.isRequired,
+  definition: PropTypes.string.isRequired,
+  definitionFirst: PropTypes.bool.isRequired,
+  cardIndex: PropTypes.number.isRequired,
+  totalCards: PropTypes.number.isRequired,
+  onFlip: PropTypes.func.isRequired,
+  onSkip: PropTypes.func.isRequired,
+  onCorrect: PropTypes.func.isRequired,
+  onIncorrect: PropTypes.func.isRequired,
+  onDefinitionFirstChanged: PropTypes.func.isRequired,
+}
+
 export default QuizView;

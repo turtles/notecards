@@ -1,10 +1,7 @@
 import '../../Styles/QuizView.css';
 import React from 'react';
 import PropTypes from 'prop-types'
-import {
-  Row,Col,Button,
-  Nav, NavItem, NavLink
-} from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 
 const NotecardViewerMenu = ({flipped, onFlip, onSkip, onCorrect, onIncorrect})=>{
   if (!flipped) {
@@ -36,5 +33,13 @@ const NotecardViewerMenu = ({flipped, onFlip, onSkip, onCorrect, onIncorrect})=>
     );
   }
 };
+
+NotecardViewerMenu.propTypes = {
+  flipped: PropTypes.bool.isRequired,
+  onFlip: PropTypes.func.isRequired,
+  onSkip: PropTypes.func.isRequired,
+  onCorrect: PropTypes.func.isRequired,
+  onIncorrect: PropTypes.func.isRequired,
+}
 
 export default NotecardViewerMenu;

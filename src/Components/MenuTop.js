@@ -34,4 +34,10 @@ const MenuTop = ({view, onGotoQuiz, onGotoNotecardEditor}) => {
   );
 };
 
+MenuTop.propTypes = {
+  view: PropTypes.string.isRequired,
+  onGotoQuiz: PropTypes.func.isRequired,
+  onGotoNotecardEditor: PropTypes.func.isRequired
+}
+
 export default MenuTop;

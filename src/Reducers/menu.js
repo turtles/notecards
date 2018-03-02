@@ -6,7 +6,7 @@ const initialState = {
 	view: 'notecardEditor'
 }
 
-const menu = (state = {}, action) => {
+const menu = (state = initialState, action) => {
 	switch (action.type) {
 
 		case GOTO_NOTECARD_EDITOR:

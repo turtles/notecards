@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import React from 'react';
-import NotecardEditor from './Components/NotecardEditor';
+import NotecardEditor from './Components/NotecardEditor/NotecardEditor';
 import Menu from './Components/Menu';
-import Quiz from './Components/Quiz';
+import Quiz from './Components/Quiz/Quiz';
 import {Container} from 'reactstrap'
 
 

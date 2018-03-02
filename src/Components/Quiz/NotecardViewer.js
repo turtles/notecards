@@ -1,4 +1,4 @@
-import '../Styles/NotecardViewer.css';
+import '../../Styles/NotecardViewer.css';
 import React from 'react';
 import PropTypes from 'prop-types'
 import {
@@ -7,7 +7,6 @@ import {
   Nav, NavItem, NavLink
 } from 'reactstrap';
 import { CSSTransition } from 'react-transition-group'
-import { FontAwesome } from 'react-fontawesome'
 
 const Fade = ({ children, ...props }) => (
   <CSSTransition

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import {addNotecard, removeNotecard, updateNotecard,
-				importNotecards, exportNotecards} from '../Actions/notecardEditor'
-import { gotoQuiz } from '../Actions/menu'
+				importNotecards, exportNotecards} from '../../Actions/notecardEditor'
+import { gotoQuiz } from '../../Actions/menu'
 import NotecardList from './NotecardList'
 
 const mapStateToProps = state => {

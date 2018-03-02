@@ -3,7 +3,7 @@ import {
 	flip, nextCard,
 	correct, incorrect,
 	definitionFirstChanged
-} from '../Actions/quiz'
+} from '../../Actions/quiz'
 import NotecardViewer from './NotecardViewer'
 
 const mapStateToProps = state => {

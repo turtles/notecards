@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import {
-	flip, nextCard, previousCard,
+	flip, nextCard,
 	correct, incorrect,
 	definitionFirstChanged
 } from '../Actions/quiz'
@@ -26,7 +26,6 @@ const mapDispatchToProps = dispatch => {
 	return {
 		onFlip:()=>dispatch(flip()),
 		onNextCard:()=>dispatch(nextCard()),
-		onPreviousCard:()=>dispatch(previousCard()),
 		onCorrect: ()=>dispatch(correct()),
 		onIncorrect: ()=>dispatch(incorrect()),
 		onDefinitionFirstChanged: ()=>dispatch(definitionFirstChanged()),

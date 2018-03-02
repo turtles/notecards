@@ -7,6 +7,7 @@ import {
   Nav, NavItem, NavLink
 } from 'reactstrap';
 import { CSSTransition } from 'react-transition-group'
+import { FontAwesome } from 'react-fontawesome'
 
 const Fade = ({ children, ...props }) => (
   <CSSTransition
@@ -23,23 +24,29 @@ const Swap = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onNextCard, onPreviousCard, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
+const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onNextCard, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
+  // TODO: Break into subcomponents
   let cardMenu = (!flipped ? (
       <Row>
-        <Col sm={{size: 2, offset: 2}}>
-          <Button onClick={onPreviousCard}>Previous</Button>
+        <Col sm={{size: 2, offset: 5}} className="text-center">
+          <Button color="primary" onClick={onFlip}>Flip</Button>
         </Col>
-        <Col sm={{size: 2}}>
-          <Button onClick={onFlip}>Flip</Button>
-        </Col>
-        <Col sm={{size: 2}}>
-          <Button onClick={onNextCard}>Next</Button>
+        <Col sm={{size: 2}} className="text-center">
+          <Button onClick={onNextCard}>Skip</Button>
         </Col>
       </Row>
     ) : (
       <Row>
-        <Col sm={{size: 2, offset: 3}}><Button onClick={onNextCard}>Yes</Button></Col>
-        <Col sm={{size: 2}}><Button onClick={onNextCard}>No</Button></Col>
+        <Col sm={{size: 2, offset: 4}} className="text-center">
+          <Button color="danger" onClick={onIncorrect}>
+            No
+          </Button>
+        </Col>
+        <Col sm={{size: 2}} className="text-center">
+          <Button color="success" onClick={onCorrect}>
+            Yes
+          </Button>
+        </Col>
       </Row>
     ));
 

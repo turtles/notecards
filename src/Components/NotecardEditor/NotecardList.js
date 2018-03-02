@@ -4,7 +4,8 @@ import {
   Row,Col,Input,
   Button,
   Nav, NavItem, NavLink
-} from 'reactstrap';
+} from 'reactstrap'
+import NotecardEditorMenu from './NotecardEditorMenu.js'
 
 // TODO: Break into subcomponents
 
@@ -13,14 +14,10 @@ const NotecardList = ({notecards,
                         onImportNotecards, onExportNotecards,
                         onStartQuiz}) => (
   <div>
-    <Nav>
-      <NavItem>
-        <NavLink href="#" onClick={onImportNotecards}>Import</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="#" onClick={onExportNotecards}>Export</NavLink>
-      </NavItem>
-    </Nav>
+    <NotecardEditorMenu
+      onImportNotecards={onImportNotecards}
+      onExportNotecards={onExportNotecards} />
+
     {notecards.map((notecard, index) => (
         <Row key={notecard.id}>
           <Col xs="3">
@@ -36,6 +33,7 @@ const NotecardList = ({notecards,
           </Col>
         </Row>
       ))}
+
     <br/>
     <Row>
       <Col sm={{size: 2, offset: 5}}>

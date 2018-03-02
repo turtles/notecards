@@ -7,6 +7,8 @@ import {
   Nav, NavItem, NavLink
 } from 'reactstrap';
 import { CSSTransition } from 'react-transition-group'
+import CardCounter from './CardCounter'
+import CardMenu from './CardMenu'
 
 const CardTransitions = ({ children, ...props }) => (
   <CSSTransition
@@ -24,32 +26,10 @@ const Swap = ({ children, ...props }) => (
 );
 
 const NotecardViewer = ({
+    // State
     flipped, word, definition, definitionFirst, cardIndex, totalCards,
-    onFlip, onNextCard, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
-  // TODO: Break into subcomponents
-  let cardMenu = (!flipped ? (
-      <Row>
-        <Col sm={{size: 2, offset: 5}} className="text-center">
-          <Button color="primary" onClick={onFlip}>Flip</Button>
-        </Col>
-        <Col sm={{size: 2, offset: 1}} className="text-center">
-          <Button onClick={onNextCard}>Skip</Button>
-        </Col>
-      </Row>
-    ) : (
-      <Row>
-        <Col sm={{size: 2, offset: 4}} className="text-center">
-          <Button color="danger" onClick={onIncorrect}>
-            No
-          </Button>
-        </Col>
-        <Col sm={{size: 2}} className="text-center">
-          <Button color="success" onClick={onCorrect}>
-            Yes
-          </Button>
-        </Col>
-      </Row>
-    ));
+    // Dispatch
+    onFlip, onSkip, onCorrect, onIncorrect, onDefinitionFirstChanged}) => {
 
   let navItemDefinitionFirst = (definitionFirst ?
     (<NavItem><NavLink href="#" onClick={onDefinitionFirstChanged}>Definition</NavLink></NavItem>) :
@@ -68,7 +48,7 @@ const NotecardViewer = ({
         </Nav>
         </Col>
         <Col className="text-right">
-          {cardIndex+1}/{totalCards}
+          <CardCounter currentCard={cardIndex+1} totalCards={totalCards} />
         </Col>
       </Row>
       <CardTransitions in={!!flipped}>
@@ -89,7 +69,8 @@ const NotecardViewer = ({
       </CardTransitions>
       <br/>
       <br/>
-      {cardMenu}
+      <CardMenu flipped={!!flipped}
+        onFlip={onFlip} onSkip={onSkip} onCorrect={onCorrect} onIncorrect={onIncorrect} />
     </div>
   );
 }

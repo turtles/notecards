@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 			definition: 'missing definition'
 		};
 	}
+
 	return {
 			flipped: state.quiz.flipped,
 			word: card.word,
@@ -27,7 +28,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		onFlip:()=>dispatch(flip()),
-		onNextCard:()=>dispatch(nextCard()),
+		onSkip:()=>dispatch(nextCard()),
 		onCorrect: ()=>dispatch(correct()),
 		onIncorrect: ()=>dispatch(incorrect()),
 		onDefinitionFirstChanged: ()=>dispatch(definitionFirstChanged()),

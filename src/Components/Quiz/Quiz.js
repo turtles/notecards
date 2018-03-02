@@ -4,7 +4,7 @@ import {
 	correct, incorrect,
 	definitionFirstChanged
 } from '../../Actions/quiz'
-import NotecardViewer from './NotecardViewer'
+import QuizView from './QuizView'
 
 const mapStateToProps = state => {
 	let card = state.notecards[state.quiz.cardIndex];
@@ -37,6 +37,6 @@ const mapDispatchToProps = dispatch => {
 
 const Quiz = connect(
 	mapStateToProps, mapDispatchToProps
-)(NotecardViewer);
+)(QuizView);
 
 export default Quiz;

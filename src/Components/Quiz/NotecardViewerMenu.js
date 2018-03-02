@@ -1,4 +1,4 @@
-import '../../Styles/NotecardViewer.css';
+import '../../Styles/QuizView.css';
 import React from 'react';
 import PropTypes from 'prop-types'
 import {
@@ -6,7 +6,7 @@ import {
   Nav, NavItem, NavLink
 } from 'reactstrap';
 
-const CardMenu = ({flipped, onFlip, onSkip, onCorrect, onIncorrect})=>{
+const NotecardViewerMenu = ({flipped, onFlip, onSkip, onCorrect, onIncorrect})=>{
   if (!flipped) {
     return (
       <Row>
@@ -37,4 +37,4 @@ const CardMenu = ({flipped, onFlip, onSkip, onCorrect, onIncorrect})=>{
   }
 };
 
-export default CardMenu;
+export default NotecardViewerMenu;

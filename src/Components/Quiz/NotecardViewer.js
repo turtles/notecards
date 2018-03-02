@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 import { CSSTransition } from 'react-transition-group'
 
-const Fade = ({ children, ...props }) => (
+const CardTransitions = ({ children, ...props }) => (
   <CSSTransition
     {...props}
     classNames="flip">
@@ -59,7 +59,7 @@ const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onN
       <Nav>
         {navItemDefinitionFirst}
       </Nav>
-      <Fade in={!!flipped}>
+      <CardTransitions in={!!flipped}>
         <table className="Notecard">
           <tbody>
             <tr>
@@ -74,7 +74,7 @@ const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onN
             </tr>
           </tbody>
         </table>
-      </Fade>
+      </CardTransitions>
       <br/>
       <br/>
       {cardMenu}

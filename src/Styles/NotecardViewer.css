@@ -12,3 +12,44 @@
 .NotecardText {
   font-size:2em;
 }
+.cardFrontText {
+}
+.cardBackText {
+  transform:rotateY(-180deg);
+  visibility: hidden;
+}
+
+.swap-enter {
+  visibility: visible;
+  transition-delay: 0.25s;
+}
+.swap-enter.swap-enter-active {
+  transition: .25s;
+}
+.swap-exit {
+  visibility: hidden;
+  transition-delay: .25s;
+}
+.swap-exit.swap-exit-active {
+  transition:  .25s;
+}
+
+.flip-enter {
+  transform: rotateY(0deg);
+}
+.flip-enter.flip-enter-active {
+  transform: rotateY(180deg);
+  transition: transform .5s ease-in-out;
+}
+.flip-exit {
+  opacity:0;
+  transform:translateX(32px);
+}
+.flip-exit.flip-exit-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition:
+    transform .5s ease-in-out,
+    opacity .25s .5s;
+
+}

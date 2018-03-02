@@ -1,13 +1,35 @@
 /*
  * action types
  */
-
-export const GOTO_NOTECARD_EDITOR = 'GOTO_NOTECARD_EDITOR'
-
+export const FLIP = 'FLIP';
+export const NEXT_CARD = 'NEXT_CARD';
+export const PREVIOUS_CARD = 'PREVIOUS_CARD';
+export const CORRECT = 'CORRECT';
+export const INCORRECT = 'INCORRECT';
+export const DEFINITION_FIRST_CHANGED = 'DEFINITION_FIRST_CHANGED';
 /*
  * action creators
  */
+export function flip() {
+  return { type: FLIP };
+};
 
-export function gotoNotecardEditor() {
-  return { type: GOTO_NOTECARD_EDITOR }
+export function nextCard() {
+ return { type: NEXT_CARD };
+};
+
+export function previousCard() {
+ return { type: PREVIOUS_CARD };
+};
+
+export function correct() {
+ return { type: CORRECT };
+};
+
+export function incorrect() {
+ return { type: INCORRECT };
+};
+
+export function definitionFirstChanged() {
+ return { type: DEFINITION_FIRST_CHANGED }
 }

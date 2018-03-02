@@ -1,9 +1,18 @@
 import { connect } from 'react-redux'
-import { gotoQuiz, gotoNotecardEditor } from '../Actions/menu'
+import {
+	gotoQuiz,
+	gotoNotecardEditor
+} from '../Actions/menu'
+import { definitionFirstChanged } from '../Actions/quiz'
 import MenuTop from './MenuTop'
 
 const mapStateToProps = state => {
-	return { view: state.menu.view };
+	console.log('state.quiz.definitionFirst');
+	console.log(state.quiz.definitionFirst);
+	return {
+		view: state.menu.view,
+		definitionFirst: state.quiz.definitionFirst
+	};
 }
 
 const mapDispatchToProps = dispatch => {
@@ -13,7 +22,10 @@ const mapDispatchToProps = dispatch => {
 		},
 		onGotoNotecardEditor: ()=>{
 			dispatch(gotoNotecardEditor());
-		}
+		},
+		onDefinitionFirstChanged: ()=>{
+			dispatch(definitionFirstChanged());
+		},
 	}
 }
 

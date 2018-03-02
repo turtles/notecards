@@ -5,11 +5,11 @@ import {
 import {saveAs} from 'file-saver'
 
 const initialState =
-	[{
-		id:1,
-		word:"word",
-		definition:"definition"
-	}];
+	[
+		{ id:1, word:"word :3", definition:"definition :3"},
+		{ id:2, word:"React", definition: "A JavaScript library for building user interfaces" },
+		{ id:3, word:"Node", definition: "A JavaScript runtime built on Chrome's V8 JavaScript engine"},
+	];
 
 const getCardById = (cardArray, id) => {
 	return cardArray.find((card)=> (card.id === id));
@@ -17,7 +17,7 @@ const getCardById = (cardArray, id) => {
 
 const getCardIndex = (cardArray, id) => {
 	return cardArray.findIndex((card)=> (card.id === id));
-}
+};
 
 const notecards = (state = initialState, action) => {
 	let card, updatedCards;

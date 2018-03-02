@@ -1,17 +1,30 @@
 import { connect } from 'react-redux'
-import {gotoNotecardEditor} from '../Actions/quiz'
+import {flip, nextCard, previousCard, correct, incorrect} from '../Actions/quiz'
 import NotecardViewer from './NotecardViewer'
 
 const mapStateToProps = state => {
-	// return { notecards: state.notecards };
-	return {};
+	let card = state.notecards[state.quiz.cardIndex];
+	if (card === undefined) {
+		card = {
+			word: 'missing word',
+			definition: 'missing definition'
+		};
+	}
+	return {
+			flipped: state.quiz.flipped,
+			word: card.word,
+			definition: card.definition,
+			definitionFirst: state.quiz.definitionFirst
+		};
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onAddNotecard: () => {
-			dispatch(gotoNotecardEditor());
-		},
+		onFlip:()=>dispatch(flip()),
+		onNextCard:()=>dispatch(nextCard()),
+		onPreviousCard:()=>dispatch(previousCard()),
+		onCorrect: ()=>dispatch(correct()),
+		onIncorrect: ()=>dispatch(incorrect())
 	}
 }
 

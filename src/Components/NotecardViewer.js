@@ -31,7 +31,7 @@ const NotecardViewer = ({flipped, word, definition, definitionFirst, onFlip, onN
         <Col sm={{size: 2, offset: 5}} className="text-center">
           <Button color="primary" onClick={onFlip}>Flip</Button>
         </Col>
-        <Col sm={{size: 2}} className="text-center">
+        <Col sm={{size: 2, offset: 1}} className="text-center">
           <Button onClick={onNextCard}>Skip</Button>
         </Col>
       </Row>

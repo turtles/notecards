@@ -4,7 +4,6 @@ import {
 } from '../Actions/notecardEditor'
 import {GOTO_QUIZ, GOTO_NOTECARD_EDITOR} from '../Actions/menu'
 import {INCORRECT} from '../Actions/quiz'
-import {saveAs} from 'file-saver'
 
 const initialState =
 	[

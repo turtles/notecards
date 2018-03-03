@@ -8,9 +8,9 @@ import {saveAs} from 'file-saver'
 
 const initialState =
 	[
-		{ id:1, word:"word :3", definition:"definition :3"},
-		{ id:2, word:"React", definition: "A JavaScript library for building user interfaces" },
-		{ id:3, word:"Node", definition: "A JavaScript runtime built on Chrome's V8 JavaScript engine"},
+		{ id:1, word:"zenith", definition: "the point of culmination; peak"},
+		{ id:2, word:"ephemeral", definition:"lasting for a very short time"},
+		{ id:3, word:"incisive", definition: "clear and sharp in analysis or expression" },
 	];
 
 const getCardById = (cardArray, id) => {

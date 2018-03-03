@@ -5,7 +5,9 @@ import {
 import {GOTO_QUIZ} from '../Actions/menu'
 
 
-const initialState = {cardIndex:0, flipped:false, definitionFirst:false};
+const initialState = {
+	cardIndex:0, flipped:false, definitionFirst:false
+};
 
 const quiz = (state = initialState, action) => {
 	switch (action.type) {
@@ -19,7 +21,6 @@ const quiz = (state = initialState, action) => {
 				cardIndex: state.cardIndex+1,
 				flipped: false
 			};
-
 		case GOTO_QUIZ:
 		case RESTART_QUIZ:
 			// New game logic here

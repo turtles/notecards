@@ -2,7 +2,7 @@ import {
 	ADD_NOTECARD, REMOVE_NOTECARD, UPDATE_NOTECARD,
 	IMPORT_NOTECARDS, EXPORT_NOTECARDS
 } from '../Actions/notecardEditor'
-import {GOTO_QUIZ} from '../Actions/menu'
+import {GOTO_QUIZ, GOTO_NOTECARD_EDITOR} from '../Actions/menu'
 import {saveAs} from 'file-saver'
 
 const initialState =
@@ -23,6 +23,19 @@ const getCardIndex = (cardArray, id) => {
 const removeBlankCards = (cardArray) => {
 	return cardArray.filter(card=> card.word.trim()!=="" || card.definition.trim()!=="");
 };
+
+const shuffleCards = (cards)=>{
+	return shuffleArray(cards);
+};
+
+const orderCardsByIndex = (cards) => {
+	return cards.sort((a,b) => a.id > b.id);
+}
+
+// Shuffle function by @BetonMAN
+const shuffleArray = arr => arr.map(a => [Math.random(), a])
+													    .sort((a, b) => a[0] - b[0])
+													    .map(a => a[1]);
 
 const notecards = (state = initialState, action) => {
 	let card, updatedCards;
@@ -60,7 +73,10 @@ const notecards = (state = initialState, action) => {
 			return state;
 
 		case GOTO_QUIZ:
-			return removeBlankCards(state);
+			return shuffleCards(removeBlankCards(state));
+
+		case GOTO_NOTECARD_EDITOR:
+			return orderCardsByIndex(state);
 
 		default:
 			return state;

@@ -11,8 +11,7 @@ import NotecardEditorMenu from './NotecardEditorMenu.js'
 
 const NotecardList = ({notecards,
                         onAddNotecard, onRemoveNotecard, onUpdateNotecard,
-                        onImportNotecards, onExportNotecards,
-                        onStartQuiz}) => (
+                        onImportNotecards, onExportNotecards}) => (
   <div>
     <NotecardEditorMenu
       onImportNotecards={onImportNotecards}
@@ -47,7 +46,9 @@ NotecardList.propTypes = {
   notecards: PropTypes.array.isRequired,
   onAddNotecard: PropTypes.func.isRequired,
   onRemoveNotecard: PropTypes.func.isRequired,
-  onUpdateNotecard: PropTypes.func.isRequired
+  onUpdateNotecard: PropTypes.func.isRequired,
+  onImportNotecards: PropTypes.func.isRequired,
+  onExportNotecards: PropTypes.func.isRequired,
 }
 
 export default NotecardList;

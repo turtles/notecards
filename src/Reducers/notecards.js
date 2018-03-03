@@ -3,6 +3,7 @@ import {
 	IMPORT_NOTECARDS, EXPORT_NOTECARDS
 } from '../Actions/notecardEditor'
 import {GOTO_QUIZ, GOTO_NOTECARD_EDITOR} from '../Actions/menu'
+import {INCORRECT} from '../Actions/quiz'
 import {saveAs} from 'file-saver'
 
 const initialState =
@@ -71,6 +72,14 @@ const notecards = (state = initialState, action) => {
 		case EXPORT_NOTECARDS:
 			console.log('export');
 			return state;
+
+		case INCORRECT:
+			// Move card to end
+			updatedCards = state.slice();
+			let tempCard = updatedCards[action.cardIndex];
+			updatedCards[action.cardIndex] = updatedCards[updatedCards.length-1];
+			updatedCards[updatedCards.length-1] = tempCard;
+			return updatedCards;
 
 		case GOTO_QUIZ:
 			return shuffleCards(removeBlankCards(state));

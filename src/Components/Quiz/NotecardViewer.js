@@ -20,7 +20,7 @@ const Swap = ({ children, ...props }) => (
 );
 
 const NotecardViewer = ({
-    flipped, word, definition, definitionFirst,
+    flipped, word, definition, cardIndex, definitionFirst,
     onFlip, onSkip, onCorrect, onIncorrect
   })=>(
   <div>
@@ -43,7 +43,7 @@ const NotecardViewer = ({
     <br/>
     <br/>
     <NotecardViewerMenu flipped={!!flipped}
-      onFlip={onFlip} onSkip={onSkip} onCorrect={onCorrect} onIncorrect={onIncorrect} />
+      onFlip={onFlip} onSkip={onSkip} onCorrect={onCorrect} onIncorrect={()=>onIncorrect(cardIndex)} />
   </div>
 );
 
@@ -51,6 +51,7 @@ NotecardViewer.propTypes = {
   flipped: PropTypes.bool.isRequired,
   word: PropTypes.string.isRequired,
   definition: PropTypes.string.isRequired,
+  cardIndex: PropTypes.number.isRequired,
   definitionFirst: PropTypes.bool.isRequired,
   onFlip: PropTypes.func.isRequired,
   onSkip: PropTypes.func.isRequired,

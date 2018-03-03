@@ -31,7 +31,8 @@ const QuizView = ({
   else {
     quizObjects = (
       <NotecardViewer
-        flipped={flipped} word={word} definition={definition} definitionFirst={definitionFirst}
+        flipped={flipped} word={word} definition={definition} cardIndex={cardIndex}
+        definitionFirst={definitionFirst}
         onFlip={onFlip} onSkip={onSkip} onCorrect={onCorrect} onIncorrect={onIncorrect}
       />
     );

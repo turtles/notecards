@@ -27,8 +27,8 @@ export function correct() {
  return { type: CORRECT };
 };
 
-export function incorrect() {
- return { type: INCORRECT };
+export function incorrect(cardIndex) {
+ return { type: INCORRECT, cardIndex };
 };
 
 export function definitionFirstChanged() {

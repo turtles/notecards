@@ -12,18 +12,22 @@ const initialState = {
 const quiz = (state = initialState, action) => {
 	switch (action.type) {
 		case CORRECT:
-		// TODO: Add incorrect logic (add notecard to end).
-		// Currently, it falls through to next card.
-		case INCORRECT:
 		case NEXT_CARD:
 			return {
 				...state,
 				cardIndex: state.cardIndex+1,
 				flipped: false
 			};
+		case INCORRECT:
+			// Don't increment card index.
+			// Instead, let notecards reducer move the notecard to the end.
+			return {
+				...state,
+				flipped: false
+			};
 		case GOTO_QUIZ:
 		case RESTART_QUIZ:
-			// New game logic here
+			// New quiz logic here
 			return {...state, cardIndex: 0, flipped: false};
 
 		case PREVIOUS_CARD:

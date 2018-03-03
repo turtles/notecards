@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
 		onFlip:()=>dispatch(flip()),
 		onSkip:()=>dispatch(nextCard()),
 		onCorrect: ()=>dispatch(correct()),
-		onIncorrect: ()=>dispatch(incorrect()),
+		onIncorrect: (cardIndex)=>dispatch(incorrect(cardIndex)),
 		onDefinitionFirstChanged: ()=>dispatch(definitionFirstChanged()),
 		onRestartQuiz: ()=>dispatch(restartQuiz())
 	}

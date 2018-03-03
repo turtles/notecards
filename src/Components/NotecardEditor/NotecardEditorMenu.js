@@ -1,19 +1,37 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Nav, NavItem, NavLink } from 'reactstrap';
+import {CSVLink} from 'react-csv';
+import CSVReader from 'react-csv-reader'
+import '../../Styles/NotecardEditor.css'
 
-const NotecardEditorMenu = ({onImportNotecards, onExportNotecards}) => (
+const headers = [
+  'id',
+  'word',
+  'definition'
+];
+// TODO: Use CSVReader's error prop.
+const NotecardEditorMenu = ({notecards, onImportNotecards, onExportNotecards}) => (
     <Nav>
-      <NavItem>
-        <NavLink href="#" onClick={onImportNotecards}>Import</NavLink>
+      <NavItem className="lol">
+        <CSVReader
+          cssClass="csv-input"
+          onFileLoaded={onImportNotecards}
+        />
       </NavItem>
       <NavItem>
-        <NavLink href="#" onClick={onExportNotecards}>Export</NavLink>
+        <CSVLink
+          data={notecards}
+          headers={headers}
+            filename={"notecards.csv"}>
+          Export
+        </CSVLink>
       </NavItem>
     </Nav>
 );
 
 NotecardEditorMenu.propTypes = {
+  notecards: PropTypes.array.isRequired,
   onImportNotecards: PropTypes.func.isRequired,
   onExportNotecards: PropTypes.func.isRequired,
 };

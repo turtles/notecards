@@ -6,6 +6,7 @@ import {
   Nav, NavItem, NavLink
 } from 'reactstrap'
 import NotecardEditorMenu from './NotecardEditorMenu.js'
+import '../../Styles/NotecardEditor.css'
 
 // TODO: Break into subcomponents
 
@@ -14,11 +15,12 @@ const NotecardList = ({notecards,
                         onImportNotecards, onExportNotecards}) => (
   <div>
     <NotecardEditorMenu
+      notecards={notecards}
       onImportNotecards={onImportNotecards}
       onExportNotecards={onExportNotecards} />
 
     {notecards.map((notecard, index) => (
-        <Row key={notecard.id}>
+        <Row key={notecard.id} className={notecard.id%2==1 ? "notecardRow" : "altNotecardRow"}>
           <Col xs="3">
             <Input value={notecard.word}
                 onChange={(e)=>onUpdateNotecard(notecard.id, e.target.value, notecard.definition)} />
@@ -28,7 +30,7 @@ const NotecardList = ({notecards,
                 onChange={(e)=>onUpdateNotecard(notecard.id, notecard.word, e.target.value)} />
           </Col>
           <Col xs="1">
-            <Button onClick={()=>onRemoveNotecard(notecard.id)}>x</Button>
+            <Button class="removeButton" onClick={()=>onRemoveNotecard(notecard.id)}>x</Button>
           </Col>
         </Row>
       ))}

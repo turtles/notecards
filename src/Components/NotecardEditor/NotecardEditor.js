@@ -18,8 +18,8 @@ const mapDispatchToProps = dispatch => {
 		onUpdateNotecard: (id, word, definition) => {
 			dispatch(updateNotecard(id, word, definition));
 		},
-		onImportNotecards: ()=>{
-			dispatch(importNotecards());
+		onImportNotecards: (results)=>{
+			dispatch(importNotecards(results));
 		},
 		onExportNotecards: ()=>{
 			dispatch(exportNotecards());

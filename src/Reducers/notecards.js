@@ -33,6 +33,18 @@ const orderCardsByIndex = (cards) => {
 	return cards.sort((a,b) => a.id > b.id);
 }
 
+const parseCSVNotecards = (parseCSVNotecards) => {
+	let newCardArray = [];
+	for (var i = 1; i < parseCSVNotecards.length; ++i) {
+		newCardArray.push({
+			id: parseCSVNotecards[i][0],
+			word: parseCSVNotecards[i][1],
+			definition: parseCSVNotecards[i][2],
+		})
+	}
+	return newCardArray;
+}
+
 // Shuffle function by @BetonMAN
 const shuffleArray = arr => arr.map(a => [Math.random(), a])
 													    .sort((a, b) => a[0] - b[0])
@@ -66,11 +78,11 @@ const notecards = (state = initialState, action) => {
 			return updatedCards;
 
 		case IMPORT_NOTECARDS:
-			console.log('import');
-			return state;
+			console.log(action.results);
+			return parseCSVNotecards(action.results);
 
 		case EXPORT_NOTECARDS:
-			console.log('export');
+			console.log("export");
 			return state;
 
 		case INCORRECT:

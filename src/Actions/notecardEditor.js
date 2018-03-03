@@ -24,8 +24,8 @@ export function updateNotecard(id, word, definition) {
   return { type: UPDATE_NOTECARD, id, word, definition }
 }
 
-export function importNotecards() {
-  return { type: IMPORT_NOTECARDS }
+export function importNotecards(results) {
+  return { type: IMPORT_NOTECARDS, results }
 }
 
 export function exportNotecards() {

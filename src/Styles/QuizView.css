@@ -8,6 +8,8 @@
   border-width: 1px;
   height:320px;
   border-collapse: separate;
+  font-family: 'Karma', serif;
+  font-size:1.5em;
 }
 .cardTextContainer {
   position: relative; margin: 0 auto; text-align: center
@@ -16,10 +18,8 @@
   position: absolute; top: 0; width: 100%
 }
 .cardFrontText {
-  font-size:1.25em;
 }
 .cardBackText {
-  font-size:1.25em;
   transform:rotateY(-180deg);
   visibility: hidden;
 }

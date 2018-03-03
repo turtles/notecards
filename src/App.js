@@ -4,7 +4,7 @@ import NotecardEditor from './Components/NotecardEditor/NotecardEditor';
 import Menu from './Components/Menu';
 import Quiz from './Components/Quiz/Quiz';
 import {Container} from 'reactstrap'
-
+import './App.css'
 
 const AppContainer = ({view}) => {
   let body;
@@ -15,7 +15,7 @@ const AppContainer = ({view}) => {
   }
 
   return (
-    <Container>
+    <Container className="App">
       <Menu/>
       {body}
     </Container>

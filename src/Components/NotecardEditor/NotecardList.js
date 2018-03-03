@@ -20,7 +20,7 @@ const NotecardList = ({notecards,
       onExportNotecards={onExportNotecards} />
 
     {notecards.map((notecard, index) => (
-        <Row key={notecard.id} className={notecard.id%2==1 ? "notecardRow" : "altNotecardRow"}>
+        <Row key={notecard.id} className={index%2==0 ? "notecardRow" : "altNotecardRow"}>
           <Col xs="3">
             <Input value={notecard.word}
                 onChange={(e)=>onUpdateNotecard(notecard.id, e.target.value, notecard.definition)} />

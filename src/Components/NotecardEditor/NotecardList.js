@@ -7,6 +7,7 @@ import {
 } from 'reactstrap'
 import NotecardEditorMenu from './NotecardEditorMenu.js'
 import '../../Styles/NotecardEditor.css'
+import Ionicon from 'react-ionicons'
 
 // TODO: Break into subcomponents
 
@@ -30,7 +31,9 @@ const NotecardList = ({notecards,
                 onChange={(e)=>onUpdateNotecard(notecard.id, notecard.word, e.target.value)} />
           </Col>
           <Col xs="1">
-            <Button class="removeButton" onClick={()=>onRemoveNotecard(notecard.id)}>x</Button>
+            <Button className="btn-circle" onClick={()=>onRemoveNotecard(notecard.id)}>
+              <Ionicon icon="ios-close" fontSize="1.5em" color="white"/>
+            </Button>
           </Col>
         </Row>
       ))}
@@ -38,7 +41,7 @@ const NotecardList = ({notecards,
     <br/>
     <Row>
       <Col sm={{size: 2, offset: 5}}>
-        <Button onClick={onAddNotecard}>Add card</Button>
+        <Button color="primary" onClick={onAddNotecard}>Add card</Button>
       </Col>
     </Row>
   </div>

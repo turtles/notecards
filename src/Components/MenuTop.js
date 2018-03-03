@@ -10,7 +10,7 @@ const MenuTop = ({view, onGotoQuiz, onGotoNotecardEditor}) => {
     title = 'Quiz';
     menu = (
       <Col sm={{size: 2, offset: 5}}>
-        <Button onClick={onGotoNotecardEditor}>Edit Notecards</Button>
+        <Button outline color="primary" onClick={onGotoNotecardEditor}>Edit Notecards</Button>
       </Col>
     );
   }
@@ -18,7 +18,7 @@ const MenuTop = ({view, onGotoQuiz, onGotoNotecardEditor}) => {
     title = 'Edit Notecards';
     menu = (
       <Col sm={{size: 2, offset: 5}}>
-        <Button onClick={onGotoQuiz}>Start Quiz</Button>
+        <Button outline color="primary" onClick={onGotoQuiz}>Start Quiz</Button>
       </Col>
     );
   }

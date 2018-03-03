@@ -7,13 +7,19 @@
   border-style: solid;
   border-width: 1px;
   height:320px;
+  border-collapse: separate;
 }
-.NotecardText {
-  font-size:2em;
+.cardTextContainer {
+  position: relative; margin: 0 auto; text-align: center
+}
+.cardTextSubcontainer {
+  position: absolute; top: 0; width: 100%
 }
 .cardFrontText {
+  font-size:1.25em;
 }
 .cardBackText {
+  font-size:1.25em;
   transform:rotateY(-180deg);
   visibility: hidden;
 }

@@ -27,16 +27,20 @@ const NotecardViewer = ({
     <CardTransitions in={!!flipped}>
       <table className="Notecard">
         <tbody>
-          <tr>
-            <td className="text-center align-middle">
-              <Swap in={!flipped} className="cardFrontText">
-                <p>{definitionFirst ? definition : word}</p>
-              </Swap>
-              <Swap in={!!flipped} className="cardBackText">
-                <p>{definitionFirst ? word : definition}</p>
-              </Swap>
-            </td>
-          </tr>
+            <tr>
+              <td>
+                <div className="cardTextContainer">
+                    <Swap in={!flipped} className="cardFrontText">
+                      <p>{definitionFirst ? definition : word}</p>
+                    </Swap>
+                    <div className="cardTextSubcontainer">
+                      <Swap in={!!flipped} className="cardBackText">
+                        <p>{definitionFirst ? word : definition}</p>
+                      </Swap>
+                    </div>
+                </div>
+              </td>
+            </tr>
         </tbody>
       </table>
     </CardTransitions>

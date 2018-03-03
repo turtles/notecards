@@ -20,12 +20,14 @@ const NotecardEditorMenu = ({notecards, onImportNotecards, onExportNotecards}) =
         />
       </NavItem>
       <NavItem>
-        <CSVLink
-          data={notecards}
-          headers={headers}
-            filename={"notecards.csv"}>
-          Export
-        </CSVLink>
+        <NavLink>
+          <CSVLink
+            data={notecards}
+            headers={headers}
+              filename={"notecards.csv"}>
+            Export
+          </CSVLink>
+        </NavLink>
       </NavItem>
     </Nav>
 );

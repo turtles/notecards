@@ -5,6 +5,7 @@ import Menu from './Components/Menu';
 import Quiz from './Components/Quiz/Quiz';
 import {Container} from 'reactstrap'
 import './App.css'
+import Footer from './Footer';
 
 const AppContainer = ({view}) => {
   let body;
@@ -15,10 +16,13 @@ const AppContainer = ({view}) => {
   }
 
   return (
+    <div>
     <Container className="App">
       <Menu/>
       {body}
     </Container>
+    <Footer/>
+    </div>
   );
 }
 

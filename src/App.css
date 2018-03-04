@@ -18,3 +18,11 @@ body {
     font-size:1em;
     line-height: 1.42857;
 }
+
+.footer {
+  text-align:center;
+  margin-top:0.25em;
+}
+.footer a {
+  color: gray;
+}

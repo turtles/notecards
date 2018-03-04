@@ -10,13 +10,23 @@ body {
 }
 
 .btn-circle {
-    width: 2.5em;
-    height: 2.5em;
-    padding: 0.5em 0;
+    width: 2em;
+    height: 2em;
+    padding: 0.25em 0;
+    font-size:.75em;
+    line-height: 1;
     border-radius: 2em;
     text-align: center;
-    font-size:1em;
-    line-height: 1.42857;
+}
+
+@media (min-width: 768px) {
+  .btn-circle {
+      width: 2.5em;
+      height: 2.5em;
+      padding: 0.5em 0;
+      font-size:1em;
+      line-height: 1.5;
+  }
 }
 
 .footer {

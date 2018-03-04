@@ -16,13 +16,13 @@ const AppContainer = ({view}) => {
   }
 
   return (
-    <div>
-    <Container className="App">
-      <Menu/>
-      {body}
+    <Container>
+      <div className="App">
+        <Menu/>
+        {body}
+      </div>
+      <Footer/>
     </Container>
-    <Footer/>
-    </div>
   );
 }
 
